@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : collocationRules.xml
+    Created on : July 21, 2006, 12:16 PM
+    Author     : Turhan O. Daybelge
+    Description: This document contains the Collocation Rules that are used by the Collocation Recognizer.
+-->
+
+<collocationRules xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='collocationRules.xsd'>
+        <collocationRule>   <!--    koşa koşa   //-->
+		<constraint><parse>_R+Verb+Pos+Opt+A3sg</parse></constraint>
+		<constraint><parse>_R+Verb+Pos+Opt+A3sg</parse></constraint>
+		<action>%1 %2+Adverb+ByDoingSo</action>
+	</collocationRule>
+</collocationRules>

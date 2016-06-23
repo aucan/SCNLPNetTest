@@ -1,0 +1,48 @@
+<S>
+Ali:2
+P:     ali+Noun+A3sg+Pnon+Nom
+P:     ali+Noun+Prop+A3sg+Pnon+Nom
+
+okula:1
+P:     okul+Noun+A3sg+Pnon+Dat
+
+giderken:2
+P:     gider+Noun+A3sg+Pnon+Nom^DB+Verb+Zero^DB+Adverb+While
+P:     git+Verb+Pos+Aor+A3sg^DB+Adverb+While
+
+bir:1
+D:     bir+Num+Card
+P:     bir+Noun+A3sg+Pnon+Nom
+D:     bir+Adverb
+P:     bir+Adj
+
+yaþlý:2
+P:     yaþ+Adj^DB+Noun+Zero+A3sg+Pnon+Nom^DB+Adj+With
+P:     yaþ+Noun+A3sg+Pnon+Nom^DB+Adj+With
+
+adam:2
+D:     ada+Noun+A3sg+P1sg+Nom
+P:     adam+Noun+A3sg+Pnon+Nom
+
+görmüþ:1
+P:     gör+Verb+Pos^DB+Adj+Zero
+D:     gör+Verb+Pos+Narr+A3sg
+
+karþýdan:1
+P:     karþý+Noun+A3sg+Pnon+Abl
+P:     karþý+Adj^DB+Noun+Zero+A3sg+Pnon+Abl
+
+karþýya:2
+P:     karþý+Noun+A3sg+Pnon+Dat
+P:     karþý+Adj^DB+Noun+Zero+A3sg+Pnon+Dat
+
+geçmekte:1
+P:     geç+Verb+Pos^DB+Noun+Inf1+A3sg+Pnon+Loc
+P:     geç+Verb+Pos+Prog2+A3sg
+
+olan:1
+P:     ol+Verb+Pos^DB+Adj+PresPart
+
+.:1
+P:     .+Punc
+

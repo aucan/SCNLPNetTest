@@ -11,11 +11,11 @@ namespace SCNLPNetTest
         }
 
         StanfordCore sc = new StanfordCore();
+        TRLemmatizer trlm = new TRLemmatizer();
         private void btnTest_Click(object sender, EventArgs e)
         {
-            txtOutput.Text = sc.getAnnotation(txtInput.Text);
-            var ws=sc.getAnnotatedWords(txtInput.Text);
-            MessageBox.Show(ws.Count.ToString());
+            txtOutputen.Text = sc.getLemmas(txtInputen.Text);
+            txtOutputtr.Text = trlm.getLemmas(txtInputtr.Text);
         } 
     }
 }

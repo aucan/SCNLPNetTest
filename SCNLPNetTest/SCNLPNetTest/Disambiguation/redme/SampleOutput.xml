@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Document numTokens="12">
+	<Sentence>
+		<Token string="Ali" numParses="2">
+			<Parse dropped="false" selected="false">ali+Noun+A3sg+Pnon+Nom</Parse>
+			<Parse dropped="false" selected="true">ali+Noun+Prop+A3sg+Pnon+Nom</Parse>
+		</Token>
+		<Token string="okula" numParses="1">
+			<Parse dropped="false" selected="true">okul+Noun+A3sg+Pnon+Dat</Parse>
+		</Token>
+		<Token string="giderken" numParses="2">
+			<Parse dropped="false" selected="false">gider+Noun+A3sg+Pnon+Nom^DB+Verb+Zero^DB+Adverb+While</Parse>
+			<Parse dropped="false" selected="true">git+Verb+Pos+Aor+A3sg^DB+Adverb+While</Parse>
+		</Token>
+		<Token string="bir" numParses="4">
+			<Parse dropped="true" selected="true">bir+Num+Card</Parse>
+			<Parse dropped="false" selected="false">bir+Noun+A3sg+Pnon+Nom</Parse>
+			<Parse dropped="true" selected="false">bir+Adverb</Parse>
+			<Parse dropped="false" selected="false">bir+Adj</Parse>
+		</Token>
+		<Token string="yaşlı" numParses="2">
+			<Parse dropped="false" selected="false">yaş+Adj^DB+Noun+Zero+A3sg+Pnon+Nom^DB+Adj+With</Parse>
+			<Parse dropped="false" selected="true">yaş+Noun+A3sg+Pnon+Nom^DB+Adj+With</Parse>
+		</Token>
+		<Token string="adam" numParses="2">
+			<Parse dropped="true" selected="false">ada+Noun+A3sg+P1sg+Nom</Parse>
+			<Parse dropped="false" selected="true">adam+Noun+A3sg+Pnon+Nom</Parse>
+		</Token>
+		<Token string="görmüş" numParses="2">
+			<Parse dropped="false" selected="true">gör+Verb+Pos^DB+Adj+Zero</Parse>
+			<Parse dropped="true" selected="false">gör+Verb+Pos+Narr+A3sg</Parse>
+		</Token>
+		<Token string="karşıdan" numParses="2">
+			<Parse dropped="false" selected="true">karşı+Noun+A3sg+Pnon+Abl</Parse>
+			<Parse dropped="false" selected="false">karşı+Adj^DB+Noun+Zero+A3sg+Pnon+Abl</Parse>
+		</Token>
+		<Token string="karşıya" numParses="2">
+			<Parse dropped="false" selected="false">karşı+Noun+A3sg+Pnon+Dat</Parse>
+			<Parse dropped="false" selected="true">karşı+Adj^DB+Noun+Zero+A3sg+Pnon+Dat</Parse>
+		</Token>
+		<Token string="geçmekte" numParses="2">
+			<Parse dropped="false" selected="true">geç+Verb+Pos^DB+Noun+Inf1+A3sg+Pnon+Loc</Parse>
+			<Parse dropped="false" selected="false">geç+Verb+Pos+Prog2+A3sg</Parse>
+		</Token>
+		<Token string="olan" numParses="1">
+			<Parse dropped="false" selected="true">ol+Verb+Pos^DB+Adj+PresPart</Parse>
+		</Token>
+		<Token string="." numParses="1">
+			<Parse dropped="false" selected="true">.+Punc</Parse>
+		</Token>
+	</Sentence>
+</Document>

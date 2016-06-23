@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System; 
 using java.io;
 using edu.stanford.nlp.pipeline;
 using System.IO;
@@ -34,32 +33,21 @@ namespace SCNLPNetTest
             return result;
         }
 
-        public List<sWord> getAnnotatedWords(string input)
+        public string getLemmas(string input)
         {
-            List<sWord> list = new List<sWord>();
+            string lemmas = "";
             foreach (var item in getAnnotation(input).Split(new string[] { System.Environment.NewLine }, StringSplitOptions.None))
             {
                 if (item.Length > 1)
                 {
                     string[] ws = item.Split('\t');
-                    list.Add(new sWord(ws[1], ws[2], ws[3]));
+                    if(ws.Length>2)
+                        lemmas+=ws[2] +"|"+ws[3]+" ";
                 }
             }
-            return list;
+            return lemmas.Trim();
         }
-        public class sWord
-        {
-            public string word;
-            public string lemma;
-            public string POS;
-
-            public sWord(string word, string lemma, string POS)
-            {
-                this.word = word;
-                this.lemma = lemma;
-                this.POS = POS;
-            }
-        }
+ 
 
     }
 }
