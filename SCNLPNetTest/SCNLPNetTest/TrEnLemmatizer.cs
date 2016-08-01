@@ -1,14 +1,31 @@
-﻿using System; 
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using TurkishDisambiguator;
 using java.io;
 using edu.stanford.nlp.pipeline;
 using System.IO;
 
 namespace SCNLPNetTest
 {
-    class StanfordCore
+    class TrEnLemmatizer
     {
+        TurkishLemmatizer tz;
         StanfordCoreNLP pipeline;
-        public StanfordCore(string jarRoot = @"..\..\models")
+        public TrEnLemmatizer()
+        {
+            tz = new TurkishLemmatizer();
+            StanfordCore();
+        }
+
+        public string getLemmasTR(string str)
+        {
+            return tz.Lemmatize(str);
+        }
+
+        public void StanfordCore(string jarRoot = @"..\..\models")
         {
             var props = new java.util.Properties();
             props.setProperty("annotators", "tokenize, ssplit, pos, lemma");
@@ -18,7 +35,8 @@ namespace SCNLPNetTest
             pipeline = new StanfordCoreNLP(props);
             Directory.SetCurrentDirectory(curDir);
         }
-        public string getAnnotation(string input)
+
+        private string getAnnotation(string input)
         {
             Annotation annotation = new Annotation(input);
             pipeline.annotate(annotation);
@@ -33,7 +51,7 @@ namespace SCNLPNetTest
             return result;
         }
 
-        public string getLemmas(string input)
+        public string getLemmasEn(string input)
         {
             string lemmas = "";
             foreach (var item in getAnnotation(input).Split(new string[] { System.Environment.NewLine }, StringSplitOptions.None))
@@ -41,13 +59,11 @@ namespace SCNLPNetTest
                 if (item.Length > 1)
                 {
                     string[] ws = item.Split('\t');
-                    if(ws.Length>2)
-                        lemmas+=ws[2] +"|"+ws[3]+" ";
+                    if (ws.Length > 2)
+                        lemmas += ws[2] + "|" + ws[3] + " ";
                 }
             }
             return lemmas.Trim();
         }
- 
-
     }
 }

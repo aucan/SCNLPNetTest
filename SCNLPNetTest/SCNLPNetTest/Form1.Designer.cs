@@ -33,8 +33,8 @@
             this.btnTest = new System.Windows.Forms.Button();
             this.txtOutputtr = new System.Windows.Forms.TextBox();
             this.txtInputtr = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnGetTdkLemma = new System.Windows.Forms.Button();
+            this.btnGetSubLemmas = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtInputen
@@ -82,15 +82,6 @@
             this.txtInputtr.TabIndex = 3;
             this.txtInputtr.Text = "Şemsi paşa pasajında sesi büzüşesiceler.";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // btnGetTdkLemma
             // 
             this.btnGetTdkLemma.Location = new System.Drawing.Point(103, 209);
@@ -101,13 +92,23 @@
             this.btnGetTdkLemma.UseVisualStyleBackColor = true;
             this.btnGetTdkLemma.Click += new System.EventHandler(this.btnGetTdkLemma_Click);
             // 
+            // btnGetSubLemmas
+            // 
+            this.btnGetSubLemmas.Location = new System.Drawing.Point(226, 209);
+            this.btnGetSubLemmas.Name = "btnGetSubLemmas";
+            this.btnGetSubLemmas.Size = new System.Drawing.Size(134, 23);
+            this.btnGetSubLemmas.TabIndex = 7;
+            this.btnGetSubLemmas.Text = "Get Subjective Lemmas";
+            this.btnGetSubLemmas.UseVisualStyleBackColor = true;
+            this.btnGetSubLemmas.Click += new System.EventHandler(this.btnGetSubLemmas_Click);
+            // 
             // frmTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 329);
+            this.ClientSize = new System.Drawing.Size(616, 240);
+            this.Controls.Add(this.btnGetSubLemmas);
             this.Controls.Add(this.btnGetTdkLemma);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtOutputtr);
             this.Controls.Add(this.txtInputtr);
             this.Controls.Add(this.btnTest);
@@ -115,7 +116,6 @@
             this.Controls.Add(this.txtInputen);
             this.Name = "frmTest";
             this.Text = "Stanford Core NLP .Net Test";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmTest_FormClosed);
             this.Load += new System.EventHandler(this.frmTest_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -129,8 +129,8 @@
         private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.TextBox txtOutputtr;
         private System.Windows.Forms.TextBox txtInputtr;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnGetTdkLemma;
+        private System.Windows.Forms.Button btnGetSubLemmas;
     }
 }
 

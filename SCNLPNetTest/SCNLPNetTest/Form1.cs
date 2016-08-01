@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace SCNLPNetTest
@@ -11,13 +13,12 @@ namespace SCNLPNetTest
         {
             InitializeComponent();
         }
+        TrEnLemmatizer lm;
 
-        StanfordCore sc = new StanfordCore();
-        TRLemmatizer trlm = new TRLemmatizer();
         private void btnTest_Click(object sender, EventArgs e)
         {
-            txtOutputen.Text = sc.getLemmas(txtInputen.Text);
-            txtOutputtr.Text = trlm.getLemmas(txtInputtr.Text);
+            txtOutputen.Text = GetOnlyLemma(lm.getLemmasEn(txtInputen.Text));
+            txtOutputtr.Text = GetOnlyLemma(lm.getLemmasTR(txtInputtr.Text));
         }
 
         private void btnGetTdkLemma_Click(object sender, EventArgs e)
@@ -25,32 +26,44 @@ namespace SCNLPNetTest
             List<String> lemmas = new List<string>();
             foreach (string item in File.ReadAllLines(@"C:\Users\AUcan\Desktop\wordlist.txt"))
             {
-                lemmas.Add(GetOnlyLemma(item));
+                lemmas.Add(GetOnlyLemma(lm.getLemmasTR(item)));
                 Console.WriteLine(lemmas.Count);
-            }
-            File.WriteAllLines(@"C:\Users\AUcan\Desktop\wordlistlemmas2.txt", lemmas);
-        }
-
-        private string GetOnlyLemma(string item)
-        {
-            string strlemmas = trlm.getLemmas(item);
-            string result="";
-
-            foreach (string itm in strlemmas.Split())
-            {
-                result += itm.Split(new char[] { '|' })[0]+" ";
-            }
-            return result.Trim();
+            } 
+            File.WriteAllLines(@"C:\Users\AUcan\Desktop\wordlistlemmas3.txt", lemmas.Distinct());
         }
 
         private void frmTest_Load(object sender, EventArgs e)
         {
-
+            lm = new TrEnLemmatizer();
         }
 
-        private void frmTest_FormClosed(object sender, FormClosedEventArgs e)
+
+        private string GetOnlyLemma(string lmResult)
         {
-            Application.Exit();
+            string result = "";
+            string[] temp;
+            
+
+            foreach (string item in lmResult.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                temp = item.Split(new char[] { '|' });
+                if (!Regex.IsMatch(temp[0], @"[^\w\s]"))
+                {
+                    result += temp[0] + " ";                    
+                }
+            }            
+            return result.Trim();
+        }
+
+        private void btnGetSubLemmas_Click(object sender, EventArgs e)
+        {
+            List<String> lemmas = new List<string>();
+            foreach (string item in File.ReadAllLines(@"C:\Users\AUcan\Desktop\EnSubjectiveTerms.txt"))
+            {
+                lemmas.Add(GetOnlyLemma(lm.getLemmasEn(item)));
+                Console.WriteLine(lemmas.Count);
+            }
+            File.WriteAllLines(@"C:\Users\AUcan\Desktop\EnSubjectiveLemmas.txt", lemmas);
         }
     }
 }
